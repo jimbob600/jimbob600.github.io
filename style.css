@@ -1,6 +1,29 @@
+/* Remove default margin and padding from body */
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin-top: 0px;
-  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make banner full width with no gaps */
+.banner {
+  background-color: black;
+  color: red;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100vw;   /* full viewport width */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  /* includes padding/border in width */
+}
+
+/* Remove margin from the heading */
+.banner h1 {
+  margin: 0;
 }
