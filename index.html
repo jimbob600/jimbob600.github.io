@@ -10,19 +10,25 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
 
-<!-- Your Firebase config -->
-<script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSy...",
-    authDomain: "your-app.firebaseapp.com",
-    projectId: "your-app",
-    storageBucket: "your-app.appspot.com",
-    messagingSenderId: "1234567890",
-    appId: "1:1234567890:web:abcdefgh",
+    apiKey: "AIzaSyCmH3fceQPZziDt-ZKmTVKvQ3ew_AjDnqc",
+    authDomain: "idtrap-2a9c9.firebaseapp.com",
+    projectId: "idtrap-2a9c9",
+    storageBucket: "idtrap-2a9c9.firebasestorage.app",
+    messagingSenderId: "679718622327",
+    appId: "1:679718622327:web:ba32534207524cdd342272"
   };
-  firebase.initializeApp(firebaseConfig);
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
 </script>
-<script src="auth.js"></script>
 <body>
   <h1>Welcome to My Website</h1>
   <p>This is a basic static website.</p>
