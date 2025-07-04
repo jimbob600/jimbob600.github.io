@@ -11,62 +11,50 @@
       font-family: 'Oswald', sans-serif;
       background-color: #121212;
       color: white;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
     }
 
-    /* Main white header (shorter) */
-    header {
+    /* Top white header (like Hershey's) */
+    .top-header {
       background-color: white;
-      padding: 1rem 2rem 0.5rem 2rem;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
     }
 
-    .title {
+    .logo {
+      font-size: 2.5rem;
       color: red;
-      font-size: 3.5rem;
       font-weight: 700;
-      margin: 0;
     }
 
-    /* Black mini banner (large and dominant) */
-    .mini-nav-container {
-      display: flex;
-      align-items: center;
-    }
-
-    .mini-nav {
+    /* Main nav bar styled like Hershey's */
+    .main-nav {
       background-color: black;
-      padding: 2rem;
-      flex-grow: 1;
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       gap: 3rem;
-      margin-left: auto;
-      height: 120px;
+      padding: 1rem 0;
     }
 
-    .mini-nav a {
+    .main-nav a {
       color: white;
       text-decoration: none;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: bold;
       transition: color 0.3s ease;
     }
 
-    .mini-nav a:hover {
+    .main-nav a:hover {
       color: red;
     }
 
     .content {
-      flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      padding-bottom: 2rem;
+      justify-content: center;
+      min-height: 60vh;
     }
 
     .button {
@@ -98,27 +86,25 @@
 </head>
 <body>
 
-  <!-- Main white banner -->
-  <header>
-    <div class="title">IDTRAP</div>
-  </header>
-
-  <!-- Large black mini banner aligned right -->
-  <div class="mini-nav-container">
-    <div class="mini-nav">
-      <a href="#recommended">Recommended</a>
-      <a href="#samples">Samples</a>
-      <a href="#pricing">Pricing</a>
-    </div>
+  <!-- Hershey-style top white header -->
+  <div class="top-header">
+    <div class="logo">IDTRAP</div>
   </div>
 
-  <!-- Page Content -->
+  <!-- Black nav bar like Hershey's second strip -->
+  <div class="main-nav">
+    <a href="#recommended">Recommended</a>
+    <a href="#samples">Samples</a>
+    <a href="#pricing">Pricing</a>
+  </div>
+
+  <!-- Page content -->
   <div class="content">
     <button class="button" onclick="handleGroup()">Group Order</button>
     <button class="button" onclick="handleSolo()">Solo</button>
   </div>
 
-  <!-- Bottom Banner -->
+  <!-- Footer -->
   <footer>
     &copy; 2025 IDTRAP. All rights reserved.
   </footer>
