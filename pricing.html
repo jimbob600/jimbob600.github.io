@@ -7,77 +7,117 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
   <style>
     body {
+      margin: 0;
       font-family: 'Oswald', sans-serif;
       background-color: #e0e0e0;
       color: #121212;
-      margin: 2rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .title {
+      color: red;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-left: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+      margin-right: 1rem;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: red;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 3rem 1rem;
+    }
+
+    .pricing-container {
+      background: white;
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
     }
 
     h1 {
       color: red;
       font-weight: 700;
       font-size: 3rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
 
     h2 {
       font-weight: 700;
       margin-top: 2rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ff4444;
+      padding-bottom: 0.3rem;
     }
 
     h3 {
-      margin-left: 1rem;
-      margin-bottom: 0.3rem;
-    }
-
-    strong {
-      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #333;
     }
 
     .price-list {
-      margin-left: 2rem;
       font-size: 1.25rem;
       line-height: 1.6;
+      margin-bottom: 1.5rem;
+      color: #222;
     }
 
     .price-list div {
       margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .price-list div strong {
+      font-weight: 700;
+    }
+
+    p.email-info {
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      font-weight: 600;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <h1>Pricing</h1>
-
-  <p><strong>Price Per ID:</strong></p>
-
-  <h2>Solo Order</h2>
-  <div class="price-list">
-    <div><strong>Poly</strong> - $125</div>
-    <div><strong>Teslin</strong> - $100</div>
-  </div>
-
-  <h2>Group Orders</h2>
-
-  <h3>2-3 People</h3>
-  <div class="price-list">
-    <div><strong>Poly</strong> - $100</div>
-    <div><strong>Teslin</strong> - $80</div>
-  </div>
-
-  <h3>4-10 People</h3>
-  <div class="price-list">
-    <div><strong>Poly</strong> - $90</div>
-    <div><strong>Teslin</strong> - $70</div>
-  </div>
-
-  <h3>10-20 People</h3>
-  <div class="price-list">
-    <div><strong>Poly</strong> - $80</div>
-    <div><strong>Teslin</strong> - $60</div>
-  </div>
-
-  <h3>30+ People</h3>
-  <p>Email for information</p>
-</body>
-</html>
+  <header>
+    <a href="index.html" class="title">IDTRAP</a>
+    <nav>
+      <a href=
