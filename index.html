@@ -1,83 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Website</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+    <title>To create HTML dynamic pages</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        p {
+            color: green;
+        }
+    </style>
 </head>
-<!-- Firebase core SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
 
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyCmH3fceQPZziDt-ZKmTVKvQ3ew_AjDnqc",
-    authDomain: "idtrap-2a9c9.firebaseapp.com",
-    projectId: "idtrap-2a9c9",
-    storageBucket: "idtrap-2a9c9.firebasestorage.app",
-    messagingSenderId: "679718622327",
-    appId: "1:679718622327:web:ba32534207524cdd342272"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-
-  // Handle Login Only
-  document.getElementById("loginForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        document.getElementById("message").innerText = "Logged in!";
-        // Redirect or load protected content here if needed
-      })
-      .catch((error) => {
-        document.getElementById("message").innerText = error.message;
-      });
-  });
-</script>
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-</script>
 <body>
-  <!-- Title Banner -->
-  <div style="
-    background-color: black;
-    color: red;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  ">
-    <h1 style="margin: 0;">IdTrap</h1>
-  </div>
+    <h1>Dynamically changing content</h1>
+    <h3>Enter Your Name</h3>
+    <input id="name" type="text">
+    <button type="button" onclick="EnterName()">Submit</button>
+    <p id="demo"></p>
+    <script>
+        function EnterName() {
+            let user = document.getElementById("name").value;
 
-  <!-- Main Content -->
-  <h1>Welcome to My Website</h1>
-  <p>This is a basic static website.</p>
-
-  <div class="login-container">
-    <h2>Login</h2>
-    <form id="loginForm">
-      <input type="email" placeholder="Email" id="username" required />
-      <input type="password" placeholder="Password" id="password" required />
-      <button type="submit">Login</button>
-    </form>
-    <p id="message"></p>
-  </div>
+            document.getElementById("demo").innerHTML =
+                "Welcome to Geeks For Geeks " + user;
+        }
+    </script>
 </body>
 
 </html>
