@@ -6,6 +6,10 @@
   <title>Pricing - IDTRAP</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Oswald', sans-serif;
@@ -63,7 +67,7 @@
       text-align: center;
       color: #121212;
       width: 90%;
-      max-width: 900px;
+      max-width: 1000px;
       position: relative;
     }
 
@@ -111,7 +115,6 @@
       color: #555;
     }
 
-    /* Popup toggle area */
     .map-toggle-section {
       text-align: right;
       margin-top: 1rem;
@@ -159,7 +162,6 @@
       border-radius: 12px;
     }
 
-
     .close-button {
       background-color: transparent;
       border: none;
@@ -168,6 +170,22 @@
       font-weight: bold;
       float: right;
       cursor: pointer;
+    }
+
+    #recommended {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px dashed #aaa;
+    }
+
+    #recommended h2 {
+      color: #ff4444;
+    }
+
+    .recommended-content {
+      font-size: 1.1rem;
+      color: #333;
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -184,16 +202,19 @@
   </header>
 
   <main>
+    <!-- Map Toggle Area -->
     <div class="map-toggle-section">
       <p>Wondering which states are poly?</p>
       <button class="toggle-button" onclick="togglePopup()">View Map</button>
     </div>
 
+    <!-- Popup with Large Map -->
     <div class="popup" id="mapPopup">
       <button class="close-button" onclick="togglePopup()">✖</button>
       <img src="teslinvspoly.png" alt="Teslin vs Poly Map" />
     </div>
 
+    <!-- Main Pricing -->
     <h1>Pricing</h1>
 
     <p><strong>Price Per ID:</strong></p>
@@ -226,6 +247,22 @@
 
     <h3>30+ People</h3>
     <p class="email-info">Email for information</p>
+
+    <!-- Recommended Section -->
+    <section id="recommended">
+      <h2>Recommended States & Combos</h2>
+      <div class="recommended-content">
+        <p><strong>For best results:</strong></p>
+        <ul style="text-align:left; max-width: 600px; margin: 0 auto;">
+          <li>California (Poly)</li>
+          <li>Florida (Poly)</li>
+          <li>New York (Poly)</li>
+          <li>Texas (Poly)</li>
+          <li>Pennsylvania (Poly)</li>
+        </ul>
+        <p>These states have strong layouts and scanability for both club and general use.</p>
+      </div>
+    </section>
   </main>
 
   <script>
