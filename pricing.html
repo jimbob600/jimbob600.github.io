@@ -11,8 +11,6 @@
       font-family: 'Oswald', sans-serif;
       background-color: #e0e0e0;
       color: #121212;
-      display: flex;
-      flex-direction: column;
       min-height: 100vh;
     }
 
@@ -54,21 +52,14 @@
     }
 
     main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 3rem 1rem;
-    }
-
-    .pricing-container {
+      max-width: 600px;
       background: white;
+      margin: 3rem auto;
       padding: 2rem 3rem;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      max-width: 600px;
-      width: 100%;
       text-align: center;
+      color: #121212;
     }
 
     h1 {
@@ -120,4 +111,45 @@
   <header>
     <a href="index.html" class="title">IDTRAP</a>
     <nav>
-      <a href=
+      <a href="#recommended">Recommended</a>
+      <a href="#samples">Samples</a>
+      <a href="pricing.html">Pricing</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Pricing</h1>
+
+    <p><strong>Price Per ID:</strong></p>
+
+    <h2>Solo Order</h2>
+    <div class="price-list">
+      <div><strong>Poly</strong> - $125</div>
+      <div><strong>Teslin</strong> - $100</div>
+    </div>
+
+    <h2>Group Orders</h2>
+
+    <h3>2-3 People</h3>
+    <div class="price-list">
+      <div><strong>Poly</strong> - $100</div>
+      <div><strong>Teslin</strong> - $80</div>
+    </div>
+
+    <h3>4-10 People</h3>
+    <div class="price-list">
+      <div><strong>Poly</strong> - $90</div>
+      <div><strong>Teslin</strong> - $70</div>
+    </div>
+
+    <h3>10-20 People</h3>
+    <div class="price-list">
+      <div><strong>Poly</strong> - $80</div>
+      <div><strong>Teslin</strong> - $60</div>
+    </div>
+
+    <h3>30+ People</h3>
+    <p class="email-info">Email for information</p>
+  </main>
+</body>
+</html>
