@@ -16,33 +16,13 @@
       height: 100vh;
     }
 
-    /* Mini top banner */
-    .top-nav {
-      background-color: black;
-      padding: 0.75rem 2rem;
-      display: flex;
-      justify-content: flex-end;
-      gap: 2rem;
-    }
-
-    .top-nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    .top-nav a:hover {
-      color: red;
-    }
-
     /* Main white banner */
     header {
       background-color: white;
       padding: 2rem;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .title {
@@ -50,6 +30,30 @@
       font-size: 3.5rem;
       font-weight: 700;
       margin-left: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Mini Banner inside the main banner */
+    .mini-nav {
+      background-color: black;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      width: 60%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .mini-nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .mini-nav a:hover {
+      color: red;
     }
 
     .content {
@@ -78,7 +82,6 @@
       background-color: #cc0000;
     }
 
-    /* Bottom banner */
     footer {
       background-color: black;
       color: white;
@@ -89,16 +92,15 @@
   </style>
 </head>
 <body>
-  <!-- Mini Top Banner -->
-  <div class="top-nav">
-    <a href="#recommended">Recommended</a>
-    <a href="#samples">Samples</a>
-    <a href="#pricing">Pricing</a>
-  </div>
 
   <!-- Main Banner -->
   <header>
     <div class="title">IDTRAP</div>
+    <div class="mini-nav">
+      <a href="#recommended">Recommended</a>
+      <a href="#samples">Samples</a>
+      <a href="#pricing">Pricing</a>
+    </div>
   </header>
 
   <!-- Page Content -->
@@ -123,4 +125,3 @@
   </script>
 </body>
 </html>
-
