@@ -16,38 +16,42 @@
       height: 100vh;
     }
 
-    /* Main white banner */
+    /* Main white header (shorter) */
     header {
       background-color: white;
-      padding: 2rem;
+      padding: 1rem 2rem 0.5rem 2rem;
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
     }
 
     .title {
       color: red;
       font-size: 3.5rem;
       font-weight: 700;
-      margin-left: 1rem;
-      margin-bottom: 2rem;
+      margin: 0;
     }
 
-    /* Mini Banner inside the main banner */
+    /* Black mini banner (large and dominant) */
+    .mini-nav-container {
+      display: flex;
+      align-items: center;
+    }
+
     .mini-nav {
       background-color: black;
-      padding: 0.75rem 2rem;
-      border-radius: 8px;
-      width: 60%;
-      margin: 0 auto;
+      padding: 2rem;
+      flex-grow: 1;
       display: flex;
-      justify-content: space-around;
+      justify-content: flex-end;
+      gap: 3rem;
+      margin-left: auto;
+      height: 120px;
     }
 
     .mini-nav a {
       color: white;
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 1.5rem;
       font-weight: bold;
       transition: color 0.3s ease;
     }
@@ -62,6 +66,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding-bottom: 2rem;
     }
 
     .button {
@@ -93,15 +98,19 @@
 </head>
 <body>
 
-  <!-- Main Banner -->
+  <!-- Main white banner -->
   <header>
     <div class="title">IDTRAP</div>
+  </header>
+
+  <!-- Large black mini banner aligned right -->
+  <div class="mini-nav-container">
     <div class="mini-nav">
       <a href="#recommended">Recommended</a>
       <a href="#samples">Samples</a>
       <a href="#pricing">Pricing</a>
     </div>
-  </header>
+  </div>
 
   <!-- Page Content -->
   <div class="content">
