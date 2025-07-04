@@ -85,7 +85,7 @@
     <a href="index.html" class="title">IDTRAP</a>
     <nav>
       <a href="pricing.html">Pricing</a>
-      <a href="#recommended">Recommended</a>
+      <a href="recommended.html">Recommended</a>
       <a href="#samples">Samples</a>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact Us</a>
@@ -93,18 +93,8 @@
   </header>
 
   <div class="content">
-    <button class="button" onclick="handleGroup()">Group Order</button>
-    <button class="button" onclick="handleSolo()">Solo</button>
+    <button class="button" onclick="window.open('group.html', '_blank')">Group Order</button>
+    <button class="button" onclick="window.open('solo.html', '_blank')">Solo</button>
   </div>
-
-  <script>
-    function handleGroup() {
-      window.open('group.html', '_blank');
-    }
-
-    function handleSolo() {
-      window.open('solo.html', '_blank');
-    }
-  </script>
 </body>
 </html>
