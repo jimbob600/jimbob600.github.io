@@ -141,6 +141,20 @@
       padding: 0.5rem 1rem;
       font-size: 1rem;
     }
+
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+    }
+
+    legend {
+      font-weight: bold;
+      color: red;
+      font-size: 1.2rem;
+      padding: 0 0.5rem;
+    }
   </style>
 </head>
 <body>
@@ -336,6 +350,82 @@
         <input type="file" name="signatureUpload" accept="image/*" />
       </div>
 
+      <fieldset>
+        <legend>Shipping Address</legend>
+
+        <div>
+          <label for="shippingStreet">Street Address</label>
+          <input type="text" id="shippingStreet" name="shippingStreetAddress" autocomplete="shipping street-address" />
+        </div>
+
+        <div>
+          <label for="shippingCity">City</label>
+          <input type="text" id="shippingCity" name="shippingCity" autocomplete="shipping address-level2" />
+        </div>
+
+        <div>
+          <label for="shippingState">State</label>
+          <select id="shippingState" name="shippingState" autocomplete="shipping address-level1">
+            <option value="">Select your state...</option>
+            <option>Alabama</option>
+            <option>Alaska</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+            <option>California</option>
+            <option>Colorado</option>
+            <option>Connecticut</option>
+            <option>Delaware</option>
+            <option>Florida</option>
+            <option>Georgia</option>
+            <option>Hawaii</option>
+            <option>Idaho</option>
+            <option>Illinois</option>
+            <option>Indiana</option>
+            <option>Iowa</option>
+            <option>Kansas</option>
+            <option>Kentucky</option>
+            <option>Louisiana</option>
+            <option>Maine</option>
+            <option>Maryland</option>
+            <option>Massachusetts</option>
+            <option>Michigan</option>
+            <option>Minnesota</option>
+            <option>Mississippi</option>
+            <option>Missouri</option>
+            <option>Montana</option>
+            <option>Nebraska</option>
+            <option>Nevada</option>
+            <option>New Hampshire</option>
+            <option>New Jersey</option>
+            <option>New Mexico</option>
+            <option>New York</option>
+            <option>North Carolina</option>
+            <option>North Dakota</option>
+            <option>Ohio</option>
+            <option>Oklahoma</option>
+            <option>Oregon</option>
+            <option>Pennsylvania</option>
+            <option>Rhode Island</option>
+            <option>South Carolina</option>
+            <option>South Dakota</option>
+            <option>Tennessee</option>
+            <option>Texas</option>
+            <option>Utah</option>
+            <option>Vermont</option>
+            <option>Virginia</option>
+            <option>Washington</option>
+            <option>West Virginia</option>
+            <option>Wisconsin</option>
+            <option>Wyoming</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="shippingZip">ZIP Code</label>
+          <input type="text" id="shippingZip" name="shippingZipCode" autocomplete="shipping postal-code" pattern="\d{5}" title="Enter 5-digit ZIP code" />
+        </div>
+      </fieldset>
+
       <div class="checkbox-group">
         <label><input type="checkbox" name="organDonor" /> Organ Donor</label>
         <label><input type="checkbox" name="correctiveLenses" /> Corrective Lenses</label>
@@ -349,6 +439,19 @@
     const canvas = document.getElementById('signaturePad');
     const ctx = canvas.getContext('2d');
     let drawing = false;
+
+    // Resize canvas to fit width and height properly
+    function resizeCanvas() {
+      const ratio = Math.max(window.devicePixelRatio || 1, 1);
+      canvas.width = canvas.clientWidth * ratio;
+      canvas.height = canvas.clientHeight * ratio;
+      ctx.scale(ratio, ratio);
+      ctx.lineWidth = 2;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = '#000';
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
 
     canvas.addEventListener('mousedown', e => {
       drawing = true;
@@ -370,19 +473,23 @@
       e.preventDefault();
       const rect = canvas.getBoundingClientRect();
       const touch = e.touches[0];
+      drawing = true;
       ctx.beginPath();
       ctx.moveTo(touch.clientX - rect.left, touch.clientY - rect.top);
     }, { passive: false });
 
     canvas.addEventListener('touchmove', e => {
       e.preventDefault();
-      if (e.touches.length > 0) {
+      if (drawing && e.touches.length > 0) {
         const rect = canvas.getBoundingClientRect();
         const touch = e.touches[0];
         ctx.lineTo(touch.clientX - rect.left, touch.clientY - rect.top);
         ctx.stroke();
       }
     }, { passive: false });
+
+    canvas.addEventListener('touchend', () => drawing = false);
+    canvas.addEventListener('touchcancel', () => drawing = false);
 
     function clearSignature() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
