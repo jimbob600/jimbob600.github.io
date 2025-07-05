@@ -27,3 +27,12 @@ body {
 .banner h1 {
   margin: 0;
 }
+textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: 'Oswald', sans-serif;
+  width: 100%;
+  resize: vertical;
+}
