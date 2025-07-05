@@ -173,12 +173,59 @@
   <main>
     <h1>Solo Order Form</h1>
     <form autocomplete="on">
-      <!-- Form Fields up to weight -->
       <div>
         <label>State</label>
         <select name="state" autocomplete="address-level1" required>
           <option value="">Select your state...</option>
-          <!-- ... all state options with pricing ... -->
+          <option>Alabama - 100$</option>
+          <option>Alaska - 100$</option>
+          <option>Arizona - 125$</option>
+          <option>Arkansas - 100$</option>
+          <option>California - 100$</option>
+          <option>Colorado - 125$</option>
+          <option>Connecticut - 100$</option>
+          <option>Delaware - 100$</option>
+          <option>Florida - 125$</option>
+          <option>Georgia - 125$</option>
+          <option>Hawaii - 100$</option>
+          <option>Idaho - 100$</option>
+          <option>Illinois - 100$</option>
+          <option>Indiana - 125$</option>
+          <option>Iowa - 100$</option>
+          <option>Kansas - 100$</option>
+          <option>Kentucky - 125$</option>
+          <option>Louisiana - 100$</option>
+          <option>Maine - 100$</option>
+          <option>Maryland - 125$</option>
+          <option>Massachusetts - 100$</option>
+          <option>Michigan - 125$</option>
+          <option>Minnesota - 100$</option>
+          <option>Mississippi - 100$</option>
+          <option>Missouri - 100$</option>
+          <option>Montana - 100$</option>
+          <option>Nebraska - 100$</option>
+          <option>Nevada - 100$</option>
+          <option>New Hampshire - 100$</option>
+          <option>New Jersey - 100$</option>
+          <option>New Mexico - 100$</option>
+          <option>New York - 125$</option>
+          <option>North Carolina - 125$</option>
+          <option>North Dakota - 125$</option>
+          <option>Ohio - 125$</option>
+          <option>Oklahoma - 100$</option>
+          <option>Oregon - 100$</option>
+          <option>Pennsylvania - 125$</option>
+          <option>Rhode Island - 100$</option>
+          <option>South Carolina - 100$</option>
+          <option>South Dakota - 100$</option>
+          <option>Tennessee - 125$</option>
+          <option>Texas - 125$</option>
+          <option>Utah - 100$</option>
+          <option>Vermont - 125$</option>
+          <option>Virginia - 125$</option>
+          <option>Washington - 100$</option>
+          <option>West Virginia - 100$</option>
+          <option>Wisconsin - 125$</option>
           <option>Wyoming - 125$</option>
         </select>
       </div>
@@ -190,39 +237,36 @@
       <div><label>Eye Color</label><select name="eyeColor" required><option value="">Select...</option><option>Blue</option><option>Brown</option><option>Green</option><option>Hazel</option><option>Gray</option></select></div>
       <div><label>Hair Color</label><select name="hairColor" required><option value="">Select...</option><option>Black</option><option>Brown</option><option>Blonde</option><option>Red</option><option>Gray</option></select></div>
       <div><label>Birthday (for ID)</label><input type="date" name="birthday" required /></div>
-      <div><label>Height</label><select name="height" required><option value="">Select height...</option><option>5'0"</option><option>5'1"</option> <!-- etc. --><option>7'0"</option></select></div>
+      <div><label>Height</label><select name="height" required><option value="">Select height...</option><option>5'0"</option><option>5'1"</option><option>5'2"</option><option>5'3"</option><option>5'4"</option><option>5'5"</option><option>5'6"</option><option>5'7"</option><option>5'8"</option><option>5'9"</option><option>5'10"</option><option>5'11"</option><option>6'0"</option><option>6'1"</option><option>6'2"</option><option>6'3"</option><option>6'4"</option><option>6'5"</option><option>6'6"</option><option>6'7"</option><option>6'8"</option><option>6'9"</option><option>6'10"</option><option>6'11"</option><option>7'0"</option></select></div>
       <div><label>Weight (lbs)</label><input type="text" name="weight" required /></div>
       <div><label>Street Address</label><input type="text" name="streetAddress" autocomplete="street-address" required /></div>
       <div><label>City</label><input type="text" name="city" autocomplete="address-level2" required /></div>
       <div><label>ZIP Code</label><input type="text" name="zipCode" autocomplete="postal-code" required pattern="\d{5}" title="Enter 5-digit ZIP code" /></div>
 
-      <!-- Moved Checkboxes Up -->
+      <!-- CHECKBOXES MOVED ABOVE PICTURE -->
       <div class="checkbox-group">
         <label><input type="checkbox" name="organDonor" /> Organ Donor</label>
         <label><input type="checkbox" name="correctiveLenses" /> Corrective Lenses</label>
       </div>
 
-      <!-- Picture + Signature -->
+      <!-- Picture and Signature -->
       <div><label>Upload Picture</label><input type="file" name="picture" accept="image/*" required /></div>
-
       <div class="signature-box">
         <label>Draw Signature (or upload below)</label>
         <canvas id="signaturePad"></canvas>
         <button type="button" class="clear-btn" onclick="clearSignature()">Clear Signature</button>
       </div>
-
       <div><label>Or Upload Signature</label><input type="file" name="signatureUpload" accept="image/*" /></div>
 
-      <!-- Shipping -->
+      <!-- Shipping Section -->
       <fieldset>
         <legend>Shipping Address</legend>
         <div><label for="shippingStreet">Street Address</label><input type="text" id="shippingStreet" name="shippingStreetAddress" autocomplete="shipping street-address" /></div>
         <div><label for="shippingCity">City</label><input type="text" id="shippingCity" name="shippingCity" autocomplete="shipping address-level2" /></div>
-        <div><label for="shippingState">State</label><select id="shippingState" name="shippingState" autocomplete="shipping address-level1"><option value="">Select your state...</option><option>Alabama</option><option>Alaska</option> <!-- etc. --> <option>Wyoming</option></select></div>
+        <div><label for="shippingState">State</label><select id="shippingState" name="shippingState" autocomplete="shipping address-level1"><option value="">Select your state...</option><option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option></select></div>
         <div><label for="shippingZip">ZIP Code</label><input type="text" id="shippingZip" name="shippingZipCode" autocomplete="shipping postal-code" pattern="\d{5}" title="Enter 5-digit ZIP code" /></div>
       </fieldset>
 
-      <!-- Submit -->
       <button type="submit">Submit</button>
     </form>
   </main>
@@ -241,11 +285,23 @@
       ctx.lineCap = 'round';
       ctx.strokeStyle = '#000';
     }
+
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    canvas.addEventListener('mousedown', e => { drawing = true; ctx.beginPath(); ctx.moveTo(e.offsetX, e.offsetY); });
-    canvas.addEventListener('mousemove', e => { if (drawing) { ctx.lineTo(e.offsetX, e.offsetY); ctx.stroke(); } });
+    canvas.addEventListener('mousedown', e => {
+      drawing = true;
+      ctx.beginPath();
+      ctx.moveTo(e.offsetX, e.offsetY);
+    });
+
+    canvas.addEventListener('mousemove', e => {
+      if (drawing) {
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+      }
+    });
+
     canvas.addEventListener('mouseup', () => drawing = false);
     canvas.addEventListener('mouseout', () => drawing = false);
 
