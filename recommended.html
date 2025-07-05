@@ -63,6 +63,7 @@
       text-align: center;
       width: 90%;
       max-width: 900px;
+      position: relative;
     }
 
     h1 {
@@ -77,6 +78,56 @@
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .info-toggle-section {
+      text-align: right;
+      margin-bottom: 1rem;
+    }
+
+    .toggle-button {
+      background-color: #ff4444;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-button:hover {
+      background-color: #cc0000;
+    }
+
+    .popup-info {
+      position: absolute;
+      top: 3.5rem;
+      right: 2rem;
+      background: #fff;
+      border: 2px solid #ff4444;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      width: 300px;
+      z-index: 10;
+      display: none;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .popup-info p {
+      font-size: 0.95rem;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    .close-button {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      color: red;
+      float: right;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -93,10 +144,32 @@
   </header>
 
   <main>
+    <div class="info-toggle-section">
+      <button class="toggle-button" onclick="toggleInfo()">Why recommended?</button>
+    </div>
+
+    <div class="popup-info" id="infoPopup">
+      <button class="close-button" onclick="toggleInfo()">✖</button>
+      <p>
+        Wondering why we recommend states? Well, for a variety of reasons including scanning capability on forensic scanners,
+        along with material that is much better and simpler templates that are replicated well.
+        Our team has spent hours to provide the most accurate information from all over the nation.
+        Please contact our team with any specific questions.
+      </p>
+    </div>
+
     <h1>Recommended</h1>
+
     <div class="map-container">
       <img src="Reccomended Ids-Map+List.png" alt="Recommended Map" />
     </div>
   </main>
+
+  <script>
+    function toggleInfo() {
+      const popup = document.getElementById("infoPopup");
+      popup.style.display = (popup.style.display === "block") ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
