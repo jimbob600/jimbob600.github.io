@@ -156,7 +156,7 @@
 
     .popup img {
       max-width: 100%;
-      width: 600px;
+      width: 700px;
       height: auto;
       display: block;
       border-radius: 12px;
@@ -170,6 +170,12 @@
       font-weight: bold;
       float: right;
       cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .popup img {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -211,26 +217,26 @@
 
     <h2>Group Orders</h2>
 
-    <h3>2-3 People</h3>
+    <h3>2–3 People</h3>
     <div class="price-list">
       <div><strong>Poly</strong> - $100</div>
       <div><strong>Teslin</strong> - $80</div>
     </div>
 
-    <h3>4-10 People</h3>
+    <h3>4–10 People</h3>
     <div class="price-list">
       <div><strong>Poly</strong> - $90</div>
       <div><strong>Teslin</strong> - $70</div>
     </div>
 
-    <h3>10-20 People</h3>
+    <h3>10–20 People</h3>
     <div class="price-list">
       <div><strong>Poly</strong> - $80</div>
       <div><strong>Teslin</strong> - $60</div>
     </div>
 
     <h3>30+ People</h3>
-    <p class="email-info">Email for information</p>
+    <p class="email-info">Email for pricing and custom group quotes.</p>
   </main>
 
   <script>
