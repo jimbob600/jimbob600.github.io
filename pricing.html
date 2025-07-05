@@ -135,6 +135,7 @@
       border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      margin-left: 1rem;
     }
 
     .toggle-button:hover {
@@ -172,6 +173,36 @@
       cursor: pointer;
     }
 
+    .info-box {
+      background-color: #fff8f8;
+      border: 2px solid #ff4444;
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      text-align: left;
+      display: none;
+      position: relative;
+    }
+
+    .info-box p {
+      font-size: 1rem;
+      color: #333;
+      margin: 0;
+    }
+
+    .info-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.8rem;
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: red;
+      cursor: pointer;
+    }
+
     @media (max-width: 768px) {
       .popup img {
         width: 100%;
@@ -196,12 +227,21 @@
     <div class="map-toggle-section">
       <p>Wondering which states are poly?</p>
       <button class="toggle-button" onclick="togglePopup()">View Map</button>
+      <button class="toggle-button" onclick="toggleInfo()">Learn More</button>
     </div>
 
     <!-- Popup with Large Map -->
     <div class="popup" id="mapPopup">
       <button class="close-button" onclick="togglePopup()">✖</button>
       <img src="teslinvspoly.png" alt="Teslin vs Poly Map" />
+    </div>
+
+    <!-- Info Box -->
+    <div class="info-box" id="infoBox">
+      <button class="info-close" onclick="toggleInfo()">✖</button>
+      <p>
+        Polycarbonate is a material that higher security IDs are printed on. It is used to prevent tampering, as the layers of polycarbonate are fused together. Teslin is several thin paper layers glued together, which can be taken apart and tampered. Some states use Teslin and other states use Polycarbonate for their real IDs. If a state is offered in polycarbonate, it is the best option.
+      </p>
     </div>
 
     <!-- Main Pricing -->
@@ -243,6 +283,11 @@
     function togglePopup() {
       const popup = document.getElementById("mapPopup");
       popup.style.display = (popup.style.display === "block") ? "none" : "block";
+    }
+
+    function toggleInfo() {
+      const info = document.getElementById("infoBox");
+      info.style.display = (info.style.display === "block") ? "none" : "block";
     }
   </script>
 </body>
